@@ -15,18 +15,48 @@ if menu == "📖 Materi":
 
     st.subheader("1. Manfaat dan Dampak Energi Nuklir")
     st.write("""
-    **Manfaat Energi Nuklir:**
-    - Sebagai pembangkit listrik tenaga nuklir (PLTN) yang mampu menghasilkan energi dalam jumlah besar.
-    - Digunakan dalam bidang kedokteran, seperti radioterapi untuk pengobatan kanker.
-    - Pemanfaatan dalam industri, misalnya untuk uji nondestruktif (NDT).
-    - Dalam bidang pertanian, digunakan untuk mengendalikan hama dengan teknik serangga mandul.
-    - Menjadi alternatif energi dengan emisi karbon rendah dibandingkan bahan bakar fosil.
+    **Manfaat dan Dampak Energi Nuklir
 
-    **Dampak Energi Nuklir:**
-    - Limbah radioaktif yang berbahaya dan memerlukan penanganan khusus.
-    - Potensi kecelakaan reaktor yang bisa menimbulkan bencana besar (contoh: Chernobyl, Fukushima).
-    - Isu keamanan terkait penyalahgunaan teknologi nuklir untuk senjata.
-    - Tingginya biaya pembangunan dan perawatan PLTN.
+🔹 **Manfaat Energi Nuklir**:
+1. Pembangkit Listrik Tenaga Nuklir (PLTN)
+- Mampu menghasilkan listrik dalam jumlah besar dengan emisi karbon yang sangat rendah.
+- Cocok untuk mengurangi ketergantungan pada energi fosil seperti batu bara dan minyak.
+2. Bidang Kesehatan
+- Digunakan dalam radioterapi untuk menghancurkan sel kanker.
+- Isotop radioaktif dipakai sebagai tracer untuk diagnosis penyakit (misalnya PET Scan).
+3. Bidang Industri
+- Untuk uji nondestruktif (NDT), mengecek kualitas material tanpa merusaknya (misalnya struktur pesawat atau jembatan).
+- Sterilisasi alat medis menggunakan radiasi.
+4. Bidang Pertanian dan Pangan
+- Teknik serangga mandul untuk mengendalikan populasi hama.
+- Radiasi gamma digunakan untuk memperpanjang masa simpan bahan makanan.
+5. Riset dan Teknologi
+- Energi nuklir digunakan dalam penelitian reaksi inti, fisika partikel, dan pengembangan energi masa depan.
+- Menjadi alternatif energi yang efisien dan berkelanjutan.
+
+🔻 Dampak Energi Nuklir:
+
+Limbah Radioaktif
+
+Sangat berbahaya dan memerlukan penyimpanan khusus selama ribuan tahun.
+
+Jika bocor, bisa mencemari tanah, air, dan udara.
+
+Risiko Kecelakaan Nuklir
+
+Seperti tragedi Chernobyl (1986) dan Fukushima (2011) yang menimbulkan dampak kesehatan dan lingkungan jangka panjang.
+
+Isu Keamanan Global
+
+Teknologi nuklir bisa disalahgunakan untuk membuat senjata pemusnah massal.
+
+Ancaman terorisme nuklir juga jadi perhatian internasional.
+
+Biaya Pembangunan dan Perawatan PLTN
+
+Sangat tinggi dibandingkan sumber energi lain.
+
+Jika tidak dikelola dengan baik, bisa jadi beban ekonomi.
     """)
 
     st.subheader("2. Prinsip Reaksi Fisi dan Fusi")
