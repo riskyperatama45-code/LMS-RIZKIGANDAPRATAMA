@@ -3,21 +3,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Judul Aplikasi
-st.title("LMS Fisika Inti 🔬⚛️")
+st.title("LMS Fisika Inti")
 st.write("Selamat datang di Learning Management System Fisika Inti. Yuk belajar bareng!")
 
 # Sidebar menu
-menu = st.sidebar.radio("Pilih Menu", ["📖 Materi", "📊 Visualisasi", "📝 Kuis", "ℹ️ Tentang"])
+menu = st.sidebar.radio("Pilih Menu", ["Materi", "Visualisasi", "Kuis", "Tentang"])
 
 # ---------------- MATERI ----------------
-if menu == "📖 Materi":
+if menu == "Materi":
     st.header("Materi Fisika Inti")
 
     st.subheader("1. Manfaat dan Dampak Energi Nuklir")
     st.write("""
     **Manfaat dan Dampak Energi Nuklir
 
-🔹 **Manfaat Energi Nuklir**:
+**Manfaat Energi Nuklir**:
 1. Pembangkit Listrik Tenaga Nuklir (PLTN)
 - Mampu menghasilkan listrik dalam jumlah besar dengan emisi karbon yang sangat rendah.
 - Cocok untuk mengurangi ketergantungan pada energi fosil seperti batu bara dan minyak.
@@ -34,29 +34,18 @@ if menu == "📖 Materi":
 - Energi nuklir digunakan dalam penelitian reaksi inti, fisika partikel, dan pengembangan energi masa depan.
 - Menjadi alternatif energi yang efisien dan berkelanjutan.
 
-🔻 Dampak Energi Nuklir:
-
-Limbah Radioaktif
-
-Sangat berbahaya dan memerlukan penyimpanan khusus selama ribuan tahun.
-
-Jika bocor, bisa mencemari tanah, air, dan udara.
-
-Risiko Kecelakaan Nuklir
-
-Seperti tragedi Chernobyl (1986) dan Fukushima (2011) yang menimbulkan dampak kesehatan dan lingkungan jangka panjang.
-
-Isu Keamanan Global
-
-Teknologi nuklir bisa disalahgunakan untuk membuat senjata pemusnah massal.
-
-Ancaman terorisme nuklir juga jadi perhatian internasional.
-
-Biaya Pembangunan dan Perawatan PLTN
-
-Sangat tinggi dibandingkan sumber energi lain.
-
-Jika tidak dikelola dengan baik, bisa jadi beban ekonomi.
+Dampak Energi Nuklir:
+1. Limbah Radioaktif
+- Sangat berbahaya dan memerlukan penyimpanan khusus selama ribuan tahun.
+- Jika bocor, bisa mencemari tanah, air, dan udara.
+2. Risiko Kecelakaan Nuklir
+- Seperti tragedi Chernobyl (1986) dan Fukushima (2011) yang menimbulkan dampak kesehatan dan lingkungan jangka panjang.
+3. Isu Keamanan Global
+- Teknologi nuklir bisa disalahgunakan untuk membuat senjata pemusnah massal.
+- Ancaman terorisme nuklir juga jadi perhatian internasional.
+4. Biaya Pembangunan dan Perawatan PLTN
+- Sangat tinggi dibandingkan sumber energi lain.
+- Jika tidak dikelola dengan baik, bisa jadi beban ekonomi.
     """)
 
     st.subheader("2. Prinsip Reaksi Fisi dan Fusi")
