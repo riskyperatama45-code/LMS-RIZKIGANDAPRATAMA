@@ -2,14 +2,14 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Judul Aplikasi
+# streamlit
 st.title("LMS Fisika Inti")
 st.write("Selamat datang di Learning Management System Fisika Inti. Yuk belajar bareng!")
 
 # Sidebar menu
-menu = st.sidebar.radio("Pilih Menu", ["Materi", "Visualisasi", "Kuis", "Tentang"])
+menu = st.sidebar.radio("Pilih Menu", ["Materi"])
 
-# ---------------- MATERI ----------------
+# MATERI
 if menu == "Materi":
     st.header("Materi Fisika Inti")
 
@@ -51,101 +51,50 @@ Dampak Energi Nuklir:
     st.subheader("2. Prinsip Reaksi Fisi dan Fusi")
     st.write("""
     **Reaksi Fisi:**
-    - Fisi adalah proses pemecahan inti berat (contoh: Uranium-235 atau Plutonium-239) menjadi inti lebih ringan.
-    - Menghasilkan neutron bebas yang bisa memicu reaksi berantai pada reaktor nuklir.
-    - Energi dilepas karena perubahan energi ikatan nuklir yang besar.
-    - Digunakan dalam PLTN dan juga menjadi prinsip dasar bom atom.
-
+    - Fisi adalah pemecahan inti berat menjadi dua (atau lebih) inti lebih ringan, biasanya disertai pelepasan neutron dan energi besar.
     **Reaksi Fusi:**
-    - Fusi adalah penggabungan inti ringan (misalnya Deuterium + Tritium) menjadi inti lebih berat (Helium).
-    - Menghasilkan energi sangat besar dan merupakan sumber energi utama pada matahari dan bintang.
-    - Energi fusi jauh lebih besar dibandingkan fisi, dan limbahnya relatif lebih aman.
-    - Tantangan: membutuhkan temperatur & tekanan ekstrem untuk mengatasi tolakan Coulomb antar inti.
-    - Fusi berpotensi menjadi sumber energi masa depan yang lebih bersih.
+    - Fusi adalah penggabungan dua inti ringan menjadi inti yang lebih berat, juga melepaskan energi (sumber energi di bintang/matahari).
     """)
-
-# ---------------- VISUALISASI ----------------
-elif menu == "📊 Visualisasi":
-    st.header("Visualisasi Energi Ikatan per Nukleon")
-
-    A = np.arange(1, 240)  # nomor massa
-    E = 8.8 * (1 - np.exp(-A/20)) - 0.1*np.log(A+1)  # simulasi energi ikatan
-
-    fig, ax = plt.subplots()
-    ax.plot(A, E, label="Energi Ikatan per Nukleon")
-    ax.axvline(56, linestyle="--", color="red", label="Fe-56 (Stabil)")
-    ax.set_xlabel("Nomor Massa (A)")
-    ax.set_ylabel("Energi Ikatan (MeV/nukleon)")
-    ax.set_title("Kurva Energi Ikatan per Nukleon")
-    ax.legend()
-    st.pyplot(fig)
-
-    st.info("Grafik ini menunjukkan bahwa inti ringan cenderung mengalami fusi, sedangkan inti berat cenderung mengalami fisi.")
-
-# ---------------- KUIS ----------------
-elif menu == "📝 Kuis":
-    st.header("Kuis Fisika Inti")
-
-    # Soal 1
-    with st.form("soal_1"):
-        q1 = st.radio(
-            "1. Apa manfaat utama energi nuklir dalam kehidupan modern?",
-            [
-                "Menghasilkan listrik dalam jumlah besar",
-                "Mengurangi limbah industri",
-                "Menggantikan semua energi terbarukan",
-            ],
-        )
-        submit1 = st.form_submit_button("Cek Jawaban Soal 1")
-    if submit1:
-        if q1 == "Menghasilkan listrik dalam jumlah besar":
-            st.success("Benar! PLTN mampu menghasilkan energi besar dengan emisi karbon rendah.")
-        else:
-            st.error("Kurang tepat, coba lagi!")
-
-    st.markdown("---")
-
-    # Soal 2
-    with st.form("soal_2"):
-        q2 = st.radio(
-            "2. Reaksi fusi secara alami terjadi di ...",
-            ["Reaktor Nuklir", "Matahari", "Bumi"],
-        )
-        submit2 = st.form_submit_button("Cek Jawaban Soal 2")
-    if submit2:
-        if q2 == "Matahari":
-            st.success("Betul! Fusi adalah reaksi utama di matahari dan bintang.")
-        else:
-            st.error("Salah, coba cek kembali teori fusi!")
-
-    st.markdown("---")
-
-    # Soal 3
-    with st.form("soal_3"):
-        q3 = st.radio(
-            "3. Dampak negatif dari penggunaan energi nuklir adalah ...",
-            ["Limbah radioaktif", "Mengurangi polusi udara", "Meningkatkan energi bersih"],
-        )
-        submit3 = st.form_submit_button("Cek Jawaban Soal 3")
-    if submit3:
-        if q3 == "Limbah radioaktif":
-            st.success("Benar! Limbah radioaktif memerlukan penanganan khusus karena sangat berbahaya.")
-        else:
-            st.error("Kurang tepat, baca lagi bagian dampak nuklir!")
-
-# ---------------- TENTANG ----------------
-elif menu == "ℹ️ Tentang":
-    st.header("Tentang Aplikasi")
-    st.write(
-        """
-    LMS ini dibuat menggunakan **Streamlit** untuk membantu pembelajaran Fisika Inti.  
-
-    **Fitur:**  
-    - Materi: Manfaat & Dampak Energi Nuklir, Prinsip Reaksi Fisi & Fusi  
-    - Visualisasi interaktif energi ikatan per nukleon  
-    - Kuis latihan interaktif  
-    - Mudah di-deploy ke Streamlit Cloud  
-
-    Dibuat untuk tujuan edukasi 🔬⚡
-    """
+**Reaksi Fisi**
+1. mekanisme & konsep
+   > Langkah dasar:
+     - Inti berat (contoh: Uranium-235) menyerap sebuah neutron.
+     - Terbentuk compound nucleus yang berenergi tinggi → inti menjadi tak stabil → mengalami deformasi.
+     - Inti terbelah menjadi dua fragmen (produk fisi) + biasanya 2–3 neutron bebas + energi kinetik fragmen + energi radiasi (gamma).
+    contoh reaksi sederhana:   2H + 3H → 4He + n + 17.6 MeV
+    > Sumber energi: selisih massa (massa awal > massa produk) diubah menjadi energi menurut rumus Einstein: E=mc^2.
+    > Reaksi berantai: neutron bebas dapat memicu fisi inti lain → kalau rata-rata tiap fisi menghasilkan ≥1 neutron yang sukses memicu fisi lain, reaksi dapat berlanjut (→ kritikalitas).
+      - Subkritis (reaksi mati), kritis (stabil), superkritis (bertambah cepat).
+    > Pengendalian di reaktor:
+      - Moderator (air ringan, air berat, grafit) memperlambat neutron agar probabilitas fisi meningkat (untuk isotop yang menyukai neutron lambat).
+      - Control rods (mengandung boron, kadmium) menyerap neutron untuk mengatur laju reaksi.
+      - Coolant (air, gas, sodium cair) mengangkut panas → dipakai untuk menghasilkan uap → turbin → listrik.
+   > Perbandingan energi (angka):
+      - Energi per peristiwa fisi ≈ 200 MeV.
+        Konversi: 1 MeV = 1.602 × 10^−13 J →
+        200 MeV ≈ 3.20 × 10^−11 J per atom yang fisi.
+      - Jika seluruh 1 kg U-235 bereaksi (teoretis), energi total ≈ 8.21×10¹³ J (≈ 2.28×10⁷ kWh). (angka dibulatkan untuk ilustrasi).
+   > Isu & tantangan: limbah radioaktif jangka panjang, risiko kecelakaan, proliferasi (senjata), biaya pembongkaran/penanganan.
+**Reaksi Fusi**
+mekanisme & konsep
+   > Langkah dasar :
+       - Dua inti ringan (mis. Deuterium 2H dan Tritium 3H) mendekat.
+       - Mereka harus mengatasi tolakan Coulomb (tolakan elektrostatis antar muatan positif) — diperlukan energi kinetik sangat tinggi (suhu &/atau tekanan besar) atau               peluang melalui quantum tunneling.
+       - Jika berhasil, inti bergabung membentuk inti lebih berat (mis. Helium) + neutron + energi.
+Contoh reaksi D–T (paling mudah dicapai):
+   2H + 3H → 4He + n + 17.6 MeV
+   > Sumber energi: juga dari selisih massa — hasilnya dilepas sebagai energi kinetik partikel (helium, neutron).
+   > Kondisi yang dibutuhkan: suhu ekstrem (10⁷–10⁸ K), atau densitas & waktu penahanan tinggi. Agar fusi memberi energi bersih, harus penuh Lawson criterion (produk kerapatan partikel × waktu konfinemen harus mencapai ambang tertentu untuk suhu tertentu).
+        - Dua pendekatan praktis:
+         - Magnetic confinement (mis. tokamak, stellarator) — plasma dipertahankan oleh medan magnet.
+         - Inertial confinement (mis. laser, pellet) — bahan bakar dipadatkan dan dipanaskan sangat cepat sehingga reaksi terjadi sebelum bahan mengembang.
+    > Perbandingan energi (angka):
+       - Energi per reaksi D–T ≈ 17.6 MeV = 17.6 × 1.602 × 10^−13 J ≈ 2.82 × 10^-12 J per reaksi.
+       - Karena massa reaktan (D+T) sangat kecil, energi per kg bahan bakar untuk fusi jauh besar; perkiraan kasar menunjukkan energi per kg (reaktan) dari D–T bisa sekitar 3.38×10¹⁴ J/kg (≈ 9.38×10⁷ kWh/kg). sekitar 4× lipat energi per kg dibandingkan U-235 bila semua massa benar-benar bereaksi. (angka ilustratif; praktik nyata bergantung efisiensi, fuel cycle, dll.)
+   > Isu & tantangan: mencapai dan mempertahankan kondisi fusi yang stabil (plasma instabilities), material struktur yang tahan neutron dan suhu ekstrem, ketersediaan tritium (harus dibreed/rekayasa), manajemen neutron berenergi tinggi (aktivasi material).
+**Perbandingan singkat & implikasi praktis**
+   > Energi per reaksi: fisi (~200 MeV) > fusi D–T (~17.6 MeV) per event, tapi per massa bahan bakar fusi sering lebih “padat energi” karena reaktan lebih ringan.
+   > Limbah: fisi → limbah radioaktif jangka panjang. fusi → produk radioaktif relatif lebih sedikit/lebih pendek umur, namun neutron energetik tetap dapat mengaktifkan material struktur.
+   > Keamanan: reaktor fisi dapat mengalami kecelakaan (meski desain modern sangat aman) dan ada isu proliferasi; fusi tidak punya reaksi berantai seperti fisi (gampang mati sendiri) → lebih aman dari sisi runaway chain reaction, tetapi masih tantangan teknis besar.
+   > Status teknologi: fisi: komersial sudah mapan (PLTN). fusi: masih eksperimen/ pilot (proyek internasional seperti tokamak besar dan percobaan inersial)."""
     )
